@@ -1,12 +1,12 @@
 import React from 'react'
-import SignIn from './SignIn';
-import SignUp from './SignUp';
+import SearchAppBar from '../../components/Layout/LogIn/SearchAppBar'
 
 const WelcomePage = () => {
     return (
         <div>
-            <SignIn />
-            <SignUp />
+            
+            <SearchAppBar />
+            
 
         </div>
     )

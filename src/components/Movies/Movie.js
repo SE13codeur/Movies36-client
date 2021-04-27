@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 
-import MovieCard from '../../components/MovieCard'
-import MovieForm from '../../components/MovieForm'
+import MovieCard from '../../components/Movies/MovieCard'
+import MovieForm from '../../components/Movies/MovieForm'
 
 const Movie = () => {
   const { id } = useParams()
