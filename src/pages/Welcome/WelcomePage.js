@@ -1,14 +1,22 @@
 import React from 'react'
-import SearchAppBar from '../../components/Layout/LogIn/SearchAppBar'
+import Navigation from '../../components/Layout/LogIn/Navigation'
 
 const WelcomePage = () => {
     return (
-        <div>
-            
-            <SearchAppBar />
-            
-
-        </div>
+        <Router>
+      
+            <Navigation>
+                <Switch>
+                    <Route path='/' element={<WelcomePage />} />
+                    <Route path='/movies' element={<MoviesPage />} />
+                    <Route path='/bestMovies' element={<BestMoviesPage />} />
+                    <Route path='/stripe' element={<StripePage />} />
+                    <Route path='/contact' element={<Contact />} />
+                    <Route path='*' element={<NotFound />} />
+                </Switch>
+            </Navigation>
+    
+    </Router>
     )
 }
 
