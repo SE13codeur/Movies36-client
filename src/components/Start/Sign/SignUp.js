@@ -1,13 +1,13 @@
 import React from 'react'
 
-const UsersPage = () => {
+const SignUp = () => {
     return (
         <div>
             
-            <h1>USERS</h1>
+            <h1>Sign Up</h1>
             
         </div>
     )
 }
 
-export default UsersPage
+export default SignUp

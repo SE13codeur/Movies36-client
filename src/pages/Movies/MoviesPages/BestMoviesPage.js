@@ -12,7 +12,8 @@ const BestMoviesPage = () => {
         </div>
     // <Routes>
     //   <Route path='/' element={<BestMovies />} />
-    //   <Route path=':id' element={<BestMovie />} />
+    //   <Route path=':id' element={<Movie />} /> */}
+
     // </Routes>
   )
 }

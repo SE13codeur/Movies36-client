@@ -1,26 +1,16 @@
 import React from 'react'
 
-import { ThemeProvider } from '@material-ui/styles'
-
-
-
-import StartPage from '../pages/Welcome/StartPage'
-import WelcomePage from '../pages/Welcome/WelcomePage'
-
+import SignPage from '../pages/Start/Sign/SignPage'
+import StartPage from '../pages/Start/StartPage'
 
 const App = () =>
   
     <div>
-    {/* If connected == false => SignBar with <SignIn /> || <SignUp />
-        If connected => redirect <WelcomePage />  */}  
-    
-      {/*=> LogOut*/}
-        <StartPage />
+        {/* If logOut =>*/}  <SignPage />
+        {/*with <SignIn /> || <SignUp />*/}  
         
-
-
-      {/*=> LogIn
-      <WelcomePage />*/}
+        {/*=> LogIn*
+        redirect <StartPage /> */}
       
     </div>
  

@@ -10,8 +10,8 @@ const MoviesPage = () => {
             <h1>MoviesPage</h1>
             
             {/* <Routes>
-                <Route path='/' element={<Movies />} />
-                <Route path=':id' element={<Movie />} />
+                <Route path='/newMovies' element={<NewMovies />} />
+                <Route path='/bestMovies' element={<BestMovie />} />
             </Routes> */}
             
         </div>

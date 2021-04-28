@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Redirect } from 'react-router-dom'
 
-import SignBar from '../../components/Layout/StartMenuBar'
-import SignIn from '../../components/Welcome/Sign/SignIn'
-import SignUp from '../../components/Welcome/Sign/SignUp'
+import SignBar from '../../components/Layout/SignMenuBar'
+import SignIn from '../../components/start/Sign/SignIn'
+import SignUp from '../../components/start/Sign/SignUp'
 
 const StartPage = () => {
 
@@ -11,11 +11,11 @@ const StartPage = () => {
     const [userExists, setUserExists] = useState(false)
     
     {/* // REDIRECT IF USER IS LOGGED-IN OR SIGNED-UP */}
-            // if(userExists){
-            //     return(
-            //         <Redirect to='/welcome' />
-            //     )
-            // }
+            if(userExists){
+                return(
+                    <Redirect to='/welcome' />
+                )
+            }
 
     return (
         <div>
