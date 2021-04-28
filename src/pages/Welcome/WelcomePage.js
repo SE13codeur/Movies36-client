@@ -1,20 +1,21 @@
 import React from 'react'
-import Navigation from '../../components/Layout/LogIn/Navigation'
+import NavBar from '../../components/Layout/NavBar'
 
 const WelcomePage = () => {
     return (
         <Router>
       
-            <Navigation>
+            <NavBar>
                 <Switch>
-                    <Route path='/' element={<WelcomePage />} />
+                    <Route path='/' element={<StartPage />} />
                     <Route path='/movies' element={<MoviesPage />} />
                     <Route path='/bestMovies' element={<BestMoviesPage />} />
                     <Route path='/stripe' element={<StripePage />} />
+                    <Route path='/comments' element={<CommentsPage />} />
                     <Route path='/contact' element={<Contact />} />
                     <Route path='*' element={<NotFound />} />
                 </Switch>
-            </Navigation>
+            </NavBar>
     
     </Router>
     )

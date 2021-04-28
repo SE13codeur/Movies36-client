@@ -7,10 +7,12 @@ const MoviesPage = () => {
     return (
         <div>
             
-            <Routes>
+            <h1>MoviesPage</h1>
+            
+            {/* <Routes>
                 <Route path='/' element={<Movies />} />
                 <Route path=':id' element={<Movie />} />
-            </Routes>
+            </Routes> */}
             
         </div>
     )

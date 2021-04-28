@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 import {
     AppBar,
     Toolbar,
     Typography,
     Grid
 } from '@material-ui/core';
-import { makeStyles, } from '@material-ui/core/styles'
+import { makeStyles, } from '@material-ui/core/styles';
+import logo from '../logo.svg';
 
 const useStyles = makeStyles((theme) => ({
     topAppBar: {
@@ -26,28 +27,26 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const AppBars = ({ title, logoLink }) => {
+const AppBars = () => {
 
     const classes = useStyles();
 
     return (
         <AppBar position="static" elevation={0} color="default" className={classes.topAppBar}>
             <Toolbar className={classes.toolbar}>
-                {title !== undefined &&
                     <Grid container item direction="row" alignItems="center" xs={12} sm={6}>
                         <Grid item>
-                            {logoLink !== undefined && <img src={`./${logoLink}`} alt="logo" height="70px" />}
+                            <img src={logo} alt="logo" height="70px" />
                         </Grid>
                         <Grid item>
-                            <Typography className={classes.title} variant="h4" noWrap color="primary">
-                                {title.toUpperCase()}
+                            <Typography className={classes.title} variant="h4" component="h1" noWrap color="primary">
+                                STRIPE PAYMENTS
                             </Typography>
                         </Grid>
                     </Grid>
-                }
             </Toolbar>
         </AppBar>
     );
 }
 
-export default AppBar
+export default AppBars;

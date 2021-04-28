@@ -1,15 +1,20 @@
-// import React from 'react'
-// import { Routes, Route } from 'react-router-dom'
-// import Movies from '../../components/Movies/BesMovies'
-// import Movie from '../../components/Movies/Movie'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Movies from '../../components/Movies/BesMovies'
+import Movie from '../../components/Movies/Movie'
 
-// const BestMoviesPage = () => {
-//   return (
-//     <Routes>
-//       <Route path='/' element={<BestMovies />} />
-//       <Route path=':id' element={<BestMovie />} />
-//     </Routes>
-//   )
-// }
+const BestMoviesPage = () => {
+    return (
+        <div>
+            
+            <h1>BestMoviesPage</h1>
+            
+        </div>
+    // <Routes>
+    //   <Route path='/' element={<BestMovies />} />
+    //   <Route path=':id' element={<BestMovie />} />
+    // </Routes>
+  )
+}
 
-// export default BestMoviesPage
+export default BestMoviesPage

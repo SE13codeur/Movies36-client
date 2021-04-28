@@ -1,13 +1,13 @@
 import React from 'react'
 
-const StripePage = () => {
+const UsersPage = () => {
     return (
         <div>
             
-            <h1>StripePage</h1>
+            <h1>USERS</h1>
             
         </div>
     )
 }
 
-export default StripePage
+export default UsersPage
