@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BestMoviesPage = () => {
+const AddUser = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const BestMoviesPage = () => {
     )
 }
 
-export default BestMoviesPage
+export default AddUser

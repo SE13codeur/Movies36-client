@@ -1,16 +1,18 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Movie from '../../components/Movies/Movie'
-import Movies from '../../components/Movies/Movies'
+import NewMoviesPage from './MoviesPages/NewMoviesPage'
+import BestMoviesPage from './MoviesPages/BestMoviesPage'
 
 const MoviesPage = () => {
     return (
         <div>
             
-            <Routes>
-                <Route path='/' element={<Movies />} />
-                <Route path=':id' element={<Movie />} />
-            </Routes>
+            <h1>MoviesPage</h1>
+            
+            {/* <Routes>
+                <Route path='/newMovies' element={<NewMoviesPage />} />
+                <Route path='/bestMovies' element={<BestMoviesPage />} />
+            </Routes> */}
             
         </div>
     )

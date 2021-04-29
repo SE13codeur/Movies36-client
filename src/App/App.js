@@ -1,33 +1,18 @@
 import React from 'react'
 
-import { ThemeProvider } from '@material-ui/styles';
+import SignPage from '../pages/Start/Sign/SignPage'
+import StartPage from '../pages/Start/StartPage'
 
-import theme from '../styles/theme';
-import { Route, Routes } from 'react-router-dom'
-import HomePage from '../pages/Welcome/WelcomePage'
-import RoomsPage from '../pages/Movies/MoviesPage'
-import About from '../pages/About'
-import Contact from '../pages/Stripe/Stripe'
-import NotFound from '../pages/NotFound'
-import StartPage from '../pages/Welcome/StartPage';
-import WelcomePage from '../pages/Welcome/WelcomePage';
-
-
-const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
+const App = () =>
+  
+    <div>
+        {/* If logOut =>*/}  <SignPage />
+        {/*with <SignIn /> || <SignUp />*/}  
+        
+        {/*=> LogIn*
+        redirect <StartPage /> */}
       
-      {/* if LogOut =>
-      <StartPage />*/}
-
-      {/* if LogIn =>*/}
-      <WelcomePage />
-      
-
-      
-
-    </ThemeProvider>
-  )
-}
+    </div>
+ 
 
 export default App

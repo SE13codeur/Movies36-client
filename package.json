@@ -1,5 +1,5 @@
 {
-  "name": "movie36",
+  "name": "movies36",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -26,8 +26,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:888",
   "eslintConfig": {
-    "proxy": "http://localhost:888",
     "extends": [
       "react-app",
       "react-app/jest"

@@ -1,12 +1,12 @@
 import React from 'react'
-import SearchAppBar from '../../components/Layout/LogIn/SearchAppBar'
 
 const WelcomePage = () => {
     return (
         <div>
             
-            <SearchAppBar />
-            
+            <h1>WELCOME</h1>
+            <h2>SLIDER last current movies</h2>
+            <h2>TOP suggestion next movies by genre</h2>         
 
         </div>
     )
