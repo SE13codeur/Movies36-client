@@ -1,25 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
+import FaceRoundedIcon from '@material-ui/icons/FaceRounded'
 import MovieIcon from '@material-ui/icons/Movie'
 import FavoriteIcon from '@material-ui/icons/Favorite'
-import PersonPinIcon from '@material-ui/icons/PersonPin'
 import HelpIcon from '@material-ui/icons/Help'
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket'
-import ThumbDown from '@material-ui/icons/ThumbDown'
-import ThumbUp from '@material-ui/icons/ThumbUp'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
+import SearchIcon from '@material-ui/icons/Search'
+import AddShoppingCartRoundedIcon from '@material-ui/icons/AddShoppingCartRounded'
 
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import InputBase from '@material-ui/core/InputBase'
 import { fade } from '@material-ui/core/styles'
 import MenuIcon from '@material-ui/icons/Menu'
-import SearchIcon from '@material-ui/icons/Search'
+
+import StripePage from '../../pages/Stripe/BasketPage'
+import ContactPage from '../../pages/ContactPage'
 
 const TabPanel = ({ children, value, index, ...other }) =>  (
     <div
@@ -118,7 +120,7 @@ const NavBar = () => {
 
   const classes = useStyles()
 
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = useState(0)
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -136,18 +138,20 @@ const NavBar = () => {
           scrollButtons="off"
           aria-label="scrollable prevent tabs example"
         >
-          <Tab icon={<MovieIcon />} aria-label="movie" {...a11yProps(0)} />
-          <Tab icon={<FavoriteIcon />} aria-label="favorite" {...a11yProps(1)} />
-          <Tab icon={<PersonPinIcon />} aria-label="person" {...a11yProps(2)} />
-          <Tab icon={<ThumbDown />} aria-label="up" {...a11yProps(3)} />
-          <Tab icon={<ThumbUp />} aria-label="down" {...a11yProps(4)} />
-          <Tab icon={<ShoppingBasket />} aria-label="shopping" {...a11yProps(5)} />
-          <Tab icon={<HelpIcon />} aria-label="help" {...a11yProps(6)} />
+          <Tab icon={<FaceRoundedIcon />} aria-label="profile" {...a11yProps(0)} />
+          <Tab icon={<MovieIcon />} aria-label="movie" {...a11yProps(1)} />
+          <Tab icon={<FavoriteIcon />} aria-label="favorite" {...a11yProps(2)} />
+          <Tab icon={<ShoppingBasket />} aria-label="shopping" {...a11yProps(3)} />
+          <Tab icon={<HelpIcon />} aria-label="help" {...a11yProps(4)} />
+          <Tab icon={<SearchIcon />} aria-label="search" {...a11yProps(5)} />
+          <Tab icon={<AddShoppingCartRoundedIcon />} aria-label="basket" {...a11yProps(6)} />
+
         </Tabs>
+
       </AppBar>
 
       <TabPanel value={value} index={0}>
-        Welcome
+        Welcome User
       </TabPanel>
       <TabPanel value={value} index={1}>
         NewMovies
@@ -162,40 +166,20 @@ const NavBar = () => {
         Déjà Vu
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Help
+        <ContactPage />
       </TabPanel>
       <TabPanel value={value} index={6}>
-        Basket
+        <StripePage />
       </TabPanel>
 
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Movies36
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
-        </Toolbar>
-        </AppBar>
+      
+
+      
+        
+        
+          
+        
+
         
     </div>
   )

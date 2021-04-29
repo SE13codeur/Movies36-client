@@ -1,8 +1,7 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
 
-import SignBar from '../../../components/Layout/SignMenuBar'
-import SignIn from '../../../components/Start/Sign/SignIn'
+import SignBar from '../../components/Layout/SignMenuBar'
+import SignIn from '../../components/Start/SignIn'
 
 const SignPage = () => {
 
@@ -13,7 +12,7 @@ const SignPage = () => {
     {/* // REDIRECT IF USER IS LOGGED-IN OR SIGNED-IN */}
             // if(user.connected){
             //     return(
-            //         <Redirect to='/start' />
+            //         <Redirect to='/welcomeMovies' />
             //     )
             // }
 
@@ -23,7 +22,7 @@ const SignPage = () => {
             <SignBar />
 
             <SignIn />
-            {/* if user.signIn == false =><Redirect to='/signUp' /> */}
+            {/* useConnected =><Redirect to='/signUp' /> */}
     
         </div>
     )

@@ -11,7 +11,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormGroup from '@material-ui/core/FormGroup'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
-import Button from '@material-ui/core/Button'
 import Fade from '@material-ui/core/Fade'
 
 const useStyles = makeStyles((theme) => ({
@@ -59,14 +58,13 @@ const useStyles = makeStyles((theme) => ({
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Photos
+            Movies36
           </Typography>
           {auth && (
             <div>
               <IconButton
                 aria-controls="fade-menu"
                 aria-label="account of current user"
-                //aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
@@ -75,7 +73,6 @@ const useStyles = makeStyles((theme) => ({
               </IconButton>
               <Menu
                 id="fade-menu"
-                //id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
                   vertical: 'top',
@@ -93,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Connection</MenuItem>
+                <MenuItem onClick={handleClose}>TV Connection</MenuItem>
 
               </Menu>
             </div>

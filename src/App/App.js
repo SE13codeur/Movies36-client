@@ -1,7 +1,7 @@
 import React from 'react'
 
-import SignPage from '../pages/Start/Sign/SignPage'
-import StartPage from '../pages/Start/StartPage'
+import SignPage from '../pages/Start/SignPage'
+import HomePage from '../pages/Start/HomePage'
 
 const App = () =>
   
@@ -10,7 +10,7 @@ const App = () =>
         {/*with <SignIn /> || <SignUp />*/}  
         
         {/*=> LogIn*
-        redirect <StartPage /> */}
+        redirect <HomePage /> */}
       
     </div>
  
