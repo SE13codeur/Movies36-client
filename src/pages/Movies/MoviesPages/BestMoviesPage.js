@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Movies from '../../components/Movies/BesMovies'
-import Movie from '../../components/Movies/Movie'
+
 
 const BestMoviesPage = () => {
     return (

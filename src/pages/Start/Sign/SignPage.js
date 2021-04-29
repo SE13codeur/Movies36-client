@@ -9,6 +9,7 @@ const SignPage = () => {
     // STATES
     // useConnected
     
+    // eslint-disable-next-line no-lone-blocks
     {/* // REDIRECT IF USER IS LOGGED-IN OR SIGNED-IN */}
             // if(user.connected){
             //     return(
