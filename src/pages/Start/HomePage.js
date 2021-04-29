@@ -19,7 +19,7 @@ const StartApp = () => {
                         <Route path='/welcomeMovies' element={<WelcomeMoviesPage />} />
                         <Route path='/newMovies' element={<NewMoviesPage />} />
                         <Route path='/bestMovies' element={<BestMoviesPage />} />
-                        <Route path='/History' element={<HistoryPage />} />
+                        <Route path='/history' element={<HistoryPage />} />
                         <Route path='/contact' element={<ContactPage />} />
                         <Route path='*' element={<NotFoundPage />} />
                     </Routes>

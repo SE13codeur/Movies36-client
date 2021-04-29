@@ -1,4 +1,8 @@
 import React, {useState} from 'react'
+import HomePage from '../../pages/Start/HomePage'
+import NewMoviesPage from '../../pages/Movies/NewMoviesPage'
+import BestMoviesPage from '../../pages/Movies/BestMoviesPage'
+
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -14,14 +18,12 @@ import Box from '@material-ui/core/Box'
 import SearchIcon from '@material-ui/icons/Search'
 import AddShoppingCartRoundedIcon from '@material-ui/icons/AddShoppingCartRounded'
 
-import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
-import InputBase from '@material-ui/core/InputBase'
 import { fade } from '@material-ui/core/styles'
 import MenuIcon from '@material-ui/icons/Menu'
 
 import StripePage from '../../pages/Stripe/BasketPage'
 import ContactPage from '../../pages/ContactPage'
+import HistoryPage from '../../pages/Stripe/HistoryPage'
 
 const TabPanel = ({ children, value, index, ...other }) =>  (
     <div
@@ -151,22 +153,22 @@ const NavBar = () => {
       </AppBar>
 
       <TabPanel value={value} index={0}>
-        Welcome User
+        <HomePage />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        NewMovies
+        <NewMoviesPage />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        BestMovies
+        <BestMoviesPage />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Watching
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Déjà Vu
+        <HistoryPage />
       </TabPanel>
       <TabPanel value={value} index={5}>
         <ContactPage />
+      </TabPanel>
+      <TabPanel value={value} index={6}>
+        <StripePage />
       </TabPanel>
       <TabPanel value={value} index={6}>
         <StripePage />
