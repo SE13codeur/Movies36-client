@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import { Alert, AlertTitle } from '@material-ui/lab'
+import { Redirect } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,54 +48,59 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const SignIn = () => {
+const SignUp = (props) => {
 
-  const classes = useStyles()
+    const classes = useStyles()
 
-  // STATES   
-  const [signInEmail, setSignInEmail] = useState('')
-  const [signInPassword, setSignInPassword] = useState('')
-  const [signInErrors, setSignInErrors] = useState([])
+  // STATES
   const [userExists, setUserExists] = useState(false)
 
-  // SIGN IN ON CLICK
-  const handleSignIn = async () => {
-    async function signIn() {
-      setSignInErrors([])
+  const signUpUsername = useState('')
+  const [signUpEmail, setSignUpEmail] = useState('')
+  const [signUpPassword, setSignUpPassword] = useState('')
+  const [signUpErrors, setSignUpErrors] = useState([])
 
-      const response = await fetch('/signIn', {
+  // SIGN-UP ON CLICK
+  var handleSignUp = async () => {
+    async function signUp() {
+      setSignUpErrors([]);
+      const response = await fetch('/signUp', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `email=${signInEmail}&password=${signInPassword}`
-      })
-
-      const jsonResponse = await response.json()
-      if (jsonResponse.result === true) {
-        setUserExists(true)
+        headers: {'Content-Type':'application/x-www-form-urlencoded'},
+        body: `username=${signUpUsername}&email=${signUpEmail}&password=${signUpPassword}`
+      });
+      const jsonResponse = await response.json();
+      if(jsonResponse.result === true){
+        setUserExists(true);
+        props.addToken(jsonResponse.userSaved.token) // Ajout du token dans redux
       } else {
-        setSignInErrors(jsonResponse.errors)
+        setSignUpErrors(jsonResponse.errors)
       }
     }
-    signIn()
+    signUp()
   }
 
   // REDIRECT IF USER IS LOGGED-IN OR SIGNED-UP
-  // if(userExists){
-  //     return (
-  //       <Redirect to='/welcomeMovies' />      )
-  // }
-
-    // ERROR MESSAGES FOR SignIn
-    const signInErrorAlert = signInErrors.map(error => {
-      return (
-        <Alert severity="warning">
-          <AlertTitle>Warning</AlertTitle>
-          Be careful to your<strong>signIn!</strong>
-        </Alert>
+  if(userExists){
+      return(
+        <Redirect to='/welcomeMovies' />
       )
-    })
+  };
+
+
+  // ERROR MESSAGES FOR SIGNUP
+  var signUpErrorAlert = signUpErrors.map((error,i) => {
+      return (
+          <Alert onClose={() => {}}severity="error">
+          <AlertTitle>ERROR</AlertTitle>
+              Be careful to your<strong>signUp!</strong>
+          </Alert>
+      )
+  })
   
-// MAIN RETURN
+
+
+ // MAIN RETURN
   return (
     <Grid container component="main" className={classes.root}>
       
@@ -111,7 +117,7 @@ const SignIn = () => {
           </Typography>
 
           <form className={classes.form} noValidate>
-            {signInErrorAlert}
+            {signUpErrorAlert}
             <TextField
               color="secondary"
               variant="outlined"
@@ -123,8 +129,8 @@ const SignIn = () => {
               name="email"
               autoComplete="email"
               autoFocus
-              onChange={(e) => setSignInEmail(e.target.value)}
-              value={signInEmail}
+              onChange={(e) => setSignUpEmail(e.target.value)}
+              value={signUpEmail}
             />
 
             <TextField
@@ -138,8 +144,8 @@ const SignIn = () => {
               type="password"
               id="password"
               autoComplete="current-password"
-              onChange={(e) => setSignInPassword(e.target.value)}
-              value={signInPassword}
+              onChange={(e) => setSignUpPassword(e.target.value)}
+              value={signUpPassword}
             />
 
             <FormControlLabel
@@ -153,16 +159,12 @@ const SignIn = () => {
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick={() => handleSignIn()}
+              onClick={() => handleSignUp()}
             >
+              SIGN IN
             </Button>
 
             <Grid container className={classes.forgot}>
-              <Grid item xs>
-                <Link href="/email" variant="body1">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
                 <Link href="/signUp" variant="body1">
                   Don't have an account?
@@ -177,4 +179,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default SignUp

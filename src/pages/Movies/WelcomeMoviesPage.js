@@ -1,13 +1,21 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import NewMoviesPage from './NewMoviesPage'
-import BestMoviesPage from './BestMoviesPage'
+import { useAuth } from '../../utils/hooks/useLogContext'
+
+import { Alert, AlertTitle } from '@material-ui/lab'
+
 
 const MoviesPage = () => {
+
+    const { user } = useAuth()
+
     return (
         <div>
             
-            <h1>All Movies</h1>
+            user ? <h1>WELCOME {user.username}</h1> :
+                <Alert severity="error">
+                    <AlertTitle>Please, log in ^^</AlertTitle>
+                        And please, be careful to your<strong> email and password</strong>
+                </Alert>
             
         </div>
     )

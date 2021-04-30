@@ -1,3 +1,4 @@
+
 import { Router, Route, Routes } from 'react-router-dom'
 
 import HomeNavBar from '../../components/Layout/HomeNavBar'
@@ -9,9 +10,9 @@ import HistoryPage from '../Stripe/HistoryPage'
 import ContactPage from '../ContactPage'
 import NotFoundPage from '../NotFoundPage'
 
-const StartApp = () => {
+const StartApp = ({ LogProvider }) => {
     return (
-        <div>
+        <LogProvider>
 
             <Router>
                 <HomeNavBar>
@@ -26,7 +27,7 @@ const StartApp = () => {
                 </HomeNavBar>
             </Router>
 
-        </div>
+        </LogProvider>
     )
 }
 

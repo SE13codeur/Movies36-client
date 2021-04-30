@@ -19,7 +19,6 @@ import SearchIcon from '@material-ui/icons/Search'
 import AddShoppingCartRoundedIcon from '@material-ui/icons/AddShoppingCartRounded'
 
 import { fade } from '@material-ui/core/styles'
-import MenuIcon from '@material-ui/icons/Menu'
 
 import StripePage from '../../pages/Stripe/BasketPage'
 import ContactPage from '../../pages/ContactPage'
