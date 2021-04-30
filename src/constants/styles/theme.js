@@ -1,3 +1,4 @@
+import { purple, black, blue, pink } from '@material-ui/core/colors'
 import { responsiveFontSizes, createMuiTheme } from "@material-ui/core"
 
 let theme = {
@@ -17,7 +18,7 @@ let theme = {
     },
     "palette": {
       "common": {
-        "black": "#000",
+        "black": black,
         "white": "#fff"
       },
       "background": {
@@ -25,15 +26,15 @@ let theme = {
         "default": "#fafafa"
       },
       "primary": {
-        "light": "#7dafc2",
-        "main": "#5d9cb3",
-        "dark": "#416d7d",
+        "light": pink,
+        "main": blue,
+        "dark": black,
         "contrastText": "#fff"
       },
       "secondary": {
         "light": "#ff4081",
         "main": "#f50057",
-        "dark": "#c51162",
+        "dark": purple,
         "contrastText": "#fff"
       },
       "error": {
@@ -49,9 +50,8 @@ let theme = {
         "hint": "rgba(0, 0, 0, 0.38)"
       }
     }
-  }
+  };
   
-theme = createMuiTheme(theme);
-theme = responsiveFontSizes(theme);
-
-export default theme
+  theme = createMuiTheme(theme)
+  theme = responsiveFontSizes(theme)
+  export default theme
