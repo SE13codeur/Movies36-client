@@ -1,4 +1,4 @@
-import { purple, black, blue, pink } from '@material-ui/core/colors'
+import { purple, blue, pink } from '@material-ui/core/colors'
 import { responsiveFontSizes, createMuiTheme } from "@material-ui/core"
 
 let theme = {
@@ -18,7 +18,7 @@ let theme = {
     },
     "palette": {
       "common": {
-        "black": black,
+        "black": "#000",
         "white": "#fff"
       },
       "background": {
@@ -28,7 +28,7 @@ let theme = {
       "primary": {
         "light": pink,
         "main": blue,
-        "dark": black,
+        "dark": "#000",
         "contrastText": "#fff"
       },
       "secondary": {

@@ -24,8 +24,6 @@ async function logout() {
   window.localStorage.removeItem(localStorageKey)
 }
 
-// an auth provider wouldn't use your client, they'd have their own
-// so that's why we're not just re-using the client
 const authURL = process.env.REACT_APP_AUTH_URL
 
 async function client(endpoint, data) {
