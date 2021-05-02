@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { useAuth } from '../utils/hooks/useLogContext'
+import useUser from '../utils/hooks/useUser'
+import WithUser from '../context/WithUser'
 
 import WelcomeMoviesPage from '../pages/Movies/WelcomeMoviesPage'
 
@@ -10,7 +11,7 @@ const SignPage = React.lazy(() => import('../pages/Start/SignPage'))
 
 const App = () => {
 
-    const { user } = useAuth()
+    const { user } = useUser()
     
   return (
         <React.Suspense fallback={<WelcomeMoviesPage />}>
@@ -22,4 +23,4 @@ const App = () => {
   )
 }
 
-export default App
+export default WithUser(App)

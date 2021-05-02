@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+import Cinema  from '../../../assets/images/signIn.jpg'
+import Logo  from '../../../assets/images/logo.jpg'
+
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -18,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     height: '81vh',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random/?cinema)',
+    backgroundImage: `url(${Cinema})`,
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -26,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
   },
   paper: {
-    margin: theme.spacing(3, 14),
+    margin: theme.spacing(7, 14),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -59,7 +62,8 @@ const SignIn = () => {
   
   // SIGN IN ON CLICK
   const handleSignIn = async () => {
-    async function signIn() {
+    async function signIn(username) {
+      setUserExists({ username })
       setSignInErrors([])
 
       const response = await fetch('/signIn', {
@@ -85,6 +89,8 @@ const SignIn = () => {
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid
+        // style={{ backgroundImage: 'url(https://source.unsplash.com/random/?movies)' }}
+        style={{ backgroundImage: `url(${Logo})`}}
         item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>

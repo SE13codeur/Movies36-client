@@ -1,19 +1,19 @@
 import React from 'react'
-import { useAuth } from '../../utils/hooks/useLogContext'
+import useUser from '../../utils/hooks/useUser'
 
 import { Alert, AlertTitle } from '@material-ui/lab'
 
 
 const MoviesPage = () => {
 
-    const { user } = useAuth()
+    const user = useUser()
 
     return (
         <div>
             
             user ? <h1>WELCOME {user.username}</h1> :
                 <Alert severity="error">
-                    <AlertTitle>Please, log in ^^</AlertTitle>
+                    <AlertTitle>Please, SIGN IN :)</AlertTitle>
                         And please, be careful to your<strong> email and password</strong>
                 </Alert>
             
