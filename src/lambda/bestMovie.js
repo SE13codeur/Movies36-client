@@ -1,6 +1,7 @@
 exports.handler = function (event, context, callback) {
-    return {
+    const movieName = event.queryStringParameters.movieName || 'Illusion'
+    callback(null, {
         statusCode: 200,
-        body: JSON.stringify({ movieName: 'Notre vie est un film' })
-    }
+        body: JSON.stringify({ selectedMovie: `My current favorite video is ${movieName}` })
+    })
 }
