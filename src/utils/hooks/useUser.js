@@ -1,5 +1,5 @@
 import React from 'react'
-import UserContext from '../../context/UserContext'
+import UserContext from '../../context/User/UserContext'
 
 import HomePage from '../../pages/Start/HomePage'
 import * as auth from '../../functions/authentication'

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import useUser from '../utils/hooks/useUser'
-import WithUser from '../context/WithUser'
+import WithUser from '../context/User/WithUser'
 
 import WelcomeMoviesPage from '../pages/Movies/WelcomeMoviesPage'
 

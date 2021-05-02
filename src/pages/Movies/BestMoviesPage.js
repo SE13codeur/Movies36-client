@@ -8,7 +8,7 @@ const BestMoviesPage = () => {
 
     const handleSelect = movie => {
         const bestMovie = async () => {
-            const data = await fetch('/.netlify/functions/bestMovie')
+            const data = await fetch('/.netlify/functions/api/bestMovie')
             const json = await data.json()
             const topMovie = json.movieName
         }
