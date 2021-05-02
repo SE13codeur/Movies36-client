@@ -1,4 +1,13 @@
-.signIn-btn {
+
+.signIn-backgroundImage
+{   
+    background-image: url('../assets/images/signIn.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.signIn-btn
+{
     margin: 33%;  
     display: flex;
     cursor: pointer;
@@ -6,6 +15,21 @@
     height: 50px;
     width: 200px;
     color: #000000;
-    font-size: 1.5em;
+    font-size: 1.7em;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+.signIn-forgot
+{
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.1em;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: transform .33s;
+}
+
+.signIn-forgot:hover
+{
+    transform: scale(1.3);
 }

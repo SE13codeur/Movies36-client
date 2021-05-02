@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import '../../../styles/SignIn.css'
 
-import Cinema  from '../../../assets/images/signIn.jpg'
-
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -41,9 +39,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%', 
     marginTop: theme.spacing(),
   },
-  forgot: {
-    color: 'black',
-  }
+  
 }))
 
 const SignIn = () => {
@@ -85,7 +81,7 @@ const SignIn = () => {
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid
-        style={{ backgroundImage: `url(${Cinema})`}}
+        className="signIn-backgroundImage"
         item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
@@ -140,14 +136,14 @@ const SignIn = () => {
               SIGN IN
             </Button>
 
-            <Grid container className={classes.forgot}>
-              <Grid item xs>
-                <Link href="/email" variant="body1">
+            <Grid container >
+              <Grid item xs >
+                <Link className="signIn-forgot" href="/email" variant="body1">
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="/signUp" variant="body1">
+                <Link className="signIn-forgot" href="/signUp" variant="body1">
                   Don't have an account?
                 </Link>
               </Grid>
